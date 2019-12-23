@@ -10,12 +10,14 @@ def calc(path):
             step += 1
             if (curx, cury) not in points:
                 points[(curx, cury)] = step
+    print(points)
     return points
 
-lines = open("input3").read().splitlines()
+
+lines = open("3/input3").read().splitlines()
+
 s1 = lines[0].split(',')
 s2 = lines[1].split(',')
-
 
 s1_points = calc(s1)
 s2_points = calc(s2)
