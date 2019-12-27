@@ -29,7 +29,8 @@ listt = [
 
 in_orbit_around = {orbiter: target for (target, orbiter) in [line.split(')') for line in open('input6', 'r').read().splitlines()]}
 get_distance_to = lambda orbiter, to: get_distance_to(in_orbit_around[orbiter], to) + 1 if orbiter != to else 0
-print(sum(get_distance_to(orbiter, 'COM') for orbiter in in_orbit_around))
+#print(sum(get_distance_to(orbiter, 'COM') for orbiter in in_orbit_around))
+print(in_orbit_around)
 
 '''
 class OrbitNode:
@@ -46,22 +47,16 @@ class OrbitNode:
             return False
 
     def listPrint(self):
-        printval = self.
-
+        pass
 
     def calc(self):
         print(self.data)
         print(self.next)
 
 
-
-
-
-        #print(self.list[-1][1])
-
-
 print(listt[-1])
 
 orbits = OrbitNode(listt)
 orbits.calc()
+
 '''
