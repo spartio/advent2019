@@ -101,7 +101,6 @@ def operate2(list):
                     print(list[i + 1])
                 else:
                     print(list[list[i + 1]])
-
                 i = i + 2
 
             elif opcode == 5:
@@ -195,6 +194,7 @@ def operate2(list):
                 #    list[list[i + 3]] = 0
 
         list = list
+        print(i)
     return list
 
 
@@ -208,7 +208,7 @@ listeLarge = [3, 21, 1008, 21, 8, 20, 1005, 20, 22, 107, 8, 21, 20, 1006, 20, 31
               1106, 0, 36, 98, 0, 0, 1002, 21, 125, 20, 4, 20, 1105, 1, 46, 104,
               999, 1105, 1, 46, 1101, 1000, 1, 20, 4, 20, 1105, 1, 46, 98, 99]
 
-operated = operate2(listeLarge)
+operated = operate2(file)
 #print(operate2(listeEqualto8pos))
 #print(operate2(listeEqualto8imm))
 #print(operate2(listeLessThanpos))
