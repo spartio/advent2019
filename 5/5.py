@@ -1,8 +1,5 @@
 from imports.imports import readFile
 
-file = readFile("input5")
-print(file)
-
 
 def operate(list):
     i = ifirst = isecond = 0
@@ -17,7 +14,7 @@ def operate(list):
             pass
 
         if opcode == 1 or opcode == 2:
-            list[list[i + 3]] = (ifirst + isecond) if opcode == 1 else (ifirst * isecond)
+            list[list[i + 3]] = ifirst + isecond if opcode == 1 else ifirst * isecond
             i += 4
 
         elif opcode == 3:
@@ -30,21 +27,28 @@ def operate(list):
             i += 2
 
         elif opcode == 5:
-            i = isecond if ifirst != 0 else (i + 3)
+            i = isecond if ifirst != 0 else i + 3
 
         elif opcode == 6:
-            i = isecond if ifirst == 0 else (i + 3)
+            i = isecond if ifirst == 0 else i + 3
 
         elif opcode == 7:
-            list[list[i + 3]] = 1 if (ifirst < isecond) else 0
+            list[list[i + 3]] = 1 if ifirst < isecond else 0
             i += 4
 
         elif opcode == 8:
-            list[list[i + 3]] = 1 if (ifirst == isecond) else 0
+            list[list[i + 3]] = 1 if ifirst == isecond else 0
             i += 4
-        list = list
+        #list = list
     return list
 
+
+file = readFile("input5")
+operate(file)
+
+
+
+'''
 
 listeEqualto8pos = [3, 9, 8, 9, 10, 9, 4, 9, 99, -1, 8]
 listeLessThanpos = [3, 9, 7, 9, 10, 9, 4, 9, 99, -1, 8]
@@ -58,3 +62,4 @@ listeLarge = [3, 21, 1008, 21, 8, 20, 1005, 20, 22, 107, 8, 21, 20, 1006, 20, 31
 
 operated = operate(file)
 print(operated)
+'''

@@ -12,7 +12,7 @@ def operate(list):
         elif list[i] == 2:
             list[list[i + 3]] = list[list[i + 1]] * list[list[i + 2]]
         i = i + 4
-        list = list
+        #list = list
     return list
 
 
