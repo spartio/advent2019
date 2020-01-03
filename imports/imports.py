@@ -21,13 +21,14 @@ def operate(list, x, thruster):
         opcode = (lambda x: x % 100)(list[i])
         first_parameter = (lambda x, n: x // 10 ** n % 10)(list[i], 2)
         second_parameter = (lambda x, n: x // 10 ** n % 10)(list[i], 3)
+        print("opcode:{0}, i:{1}, list[i]:{2}, firstpar:{3}, secondpar:{4}".format(opcode, i, list[i], first_parameter, second_parameter))
+
         try:
             ifirst = list[i + 1] if first_parameter else list[list[i + 1]]
             isecond = list[i + 2] if second_parameter else list[list[i + 2]]
         except IndexError:
            # print("error")
             pass
-        #print("opcode:{0}, i:{1}".format(opcode,i))
 
         if opcode == 1 or opcode == 2:
             list[list[i + 3]] = ifirst + isecond if opcode == 1 else ifirst * isecond
