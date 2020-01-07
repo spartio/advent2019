@@ -3,6 +3,7 @@ def calc(path):
     directions = {'R': (1, 0), 'L': (-1, 0), 'U': (0, 1), 'D': (0, -1)}
     points = {}
     for segment in path:
+        print(segment)
         dx, dy = directions[segment[0]]
         for _ in range(int(segment[1:])):
             curx += dx
@@ -14,7 +15,7 @@ def calc(path):
     return points
 
 
-lines = open("3/input3").read().splitlines()
+lines = open("input3").read().splitlines()
 
 s1 = lines[0].split(',')
 s2 = lines[1].split(',')

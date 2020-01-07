@@ -47,9 +47,7 @@ file = readFile("input5")
 operate(file)
 
 
-
 '''
-
 listeEqualto8pos = [3, 9, 8, 9, 10, 9, 4, 9, 99, -1, 8]
 listeLessThanpos = [3, 9, 7, 9, 10, 9, 4, 9, 99, -1, 8]
 listeEqualto8imm = [3, 3, 1108, -1, 8, 3, 4, 3, 99]

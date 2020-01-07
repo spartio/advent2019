@@ -5,6 +5,7 @@
 ....#
 ...##
 '''
+from typing import List
 
 file = open("input10e").read()
 asteroids = []

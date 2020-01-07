@@ -14,7 +14,7 @@ def readFile(input):
 
 def operate(list, x, thruster):
     i = ifirst = isecond = 0
-    firstTime=1
+    #firstTime=1
     #amps = inputs
     #print("entering while with ampi:{0} and prevthrust:{1}".format(amps[ampi], thruster))
     while list[i] != 99:
@@ -64,3 +64,44 @@ def operate(list, x, thruster):
     #print("operated")
     return thruster
     # return list
+
+
+def operate2(list):
+    i = ifirst = isecond = 0
+    while list[i] != 99:
+        opcode = (lambda x: x % 100)(list[i])
+        first_parameter = (lambda x, n: x // 10 ** n % 10)(list[i], 2)
+        second_parameter = (lambda x, n: x // 10 ** n % 10)(list[i], 3)
+        try:
+            ifirst = list[i + 1] if first_parameter else list[list[i + 1]]
+            isecond = list[i + 2] if second_parameter else list[list[i + 2]]
+        except IndexError:
+            pass
+
+        if opcode == 1 or opcode == 2:
+            list[list[i + 3]] = ifirst + isecond if opcode == 1 else ifirst * isecond
+            i += 4
+
+        elif opcode == 3:
+            val = int(input("Enter your value: "))
+            list[list[i + 1]] = val
+            i += 2
+
+        elif opcode == 4:
+            print(ifirst)
+            i += 2
+
+        elif opcode == 5:
+            i = isecond if ifirst != 0 else i + 3
+
+        elif opcode == 6:
+            i = isecond if ifirst == 0 else i + 3
+
+        elif opcode == 7:
+            list[list[i + 3]] = 1 if ifirst < isecond else 0
+            i += 4
+
+        elif opcode == 8:
+            list[list[i + 3]] = 1 if ifirst == isecond else 0
+            i += 4
+    return list
